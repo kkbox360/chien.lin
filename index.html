@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+
+    <meta
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      name="viewport"
+    />
+
+    <title>Chien-Lin</title>
+
+    <meta property="og:title" content="Chien-Lin" />
+
+    <meta property="og:locale" content="en_US" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/img/logo-brand-no-background.png"
+    />
+
+    <link
+      crossorigin="crossorigin"
+      href="https://fonts.gstatic.com"
+      rel="preconnect"
+    />
+
+    <link
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="preload"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+    />
+
+    <link
+      crossorigin="anonymous"
+      href="/assets/styles/main.min.css"
+      media="screen"
+      rel="stylesheet"
+    />
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/atom-one-dark.min.css"
+    />
+
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+
+    <!--Alpine Js V3-->
+    <script
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+
+    <!-- typewriter-effect -->
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+  </head>
+
+  <body
+    x-data="global()"
+    x-init="themeInit()"
+    :class="isMobileMenuOpen ? 'max-h-screen overflow-hidden relative' : ''"
+    class="dark:bg-primary"
+  >
+    <div id="main">
+      <!-- nav bar lg -->
+      <div
+        class="container fixed left-0 right-0 top-0 z-10 mx-auto border-b border-black dark:border-white"
+      >
+        <div
+          class="flex items-center justify-between bg-white py-3 dark:bg-primary lg:py-5"
+        >
+          <a href="/" class="flex items-center">
+            <span href="/" class="mr-2">
+              <img
+                class="h-9 object-contain"
+                src="/assets/img/logo-brand-no-background.png"
+                alt="logo"
+              />
+            </span>
+            <!-- <p
+              class="hidden font-body text-2xl font-bold text-primary dark:text-white lg:block"
+            >
+              Chien-Lin Wang
+            </p> -->
+          </a>
+          <div class="flex items-center lg:hidden">
+            <i
+              class="bx mr-8 cursor-pointer text-3xl text-primary dark:text-white"
+              @click="themeSwitch()"
+              :class="isDarkMode ? 'bxs-sun' : 'bxs-moon'"
+            ></i>
+
+            <svg
+              width="24"
+              height="15"
+              xmlns="http://www.w3.org/2000/svg"
+              @click="isMobileMenuOpen = true"
+              class="fill-current text-primary dark:text-white"
+            >
+              <g fill-rule="evenodd">
+                <rect width="24" height="3" rx="1.5" />
+                <rect x="8" y="6" width="16" height="3" rx="1.5" />
+                <rect x="4" y="12" width="20" height="3" rx="1.5" />
+              </g>
+            </svg>
+          </div>
+          <div class="hidden lg:block">
+            <ul class="flex items-center">
+              <li class="group relative mb-1 mr-6">
+                <div
+                  class="absolute bottom-0 left-0 z-20 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow"
+                ></div>
+                <a
+                  href="#intro"
+                  class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary"
+                  >Intro</a
+                >
+              </li>
+
+              <li class="group relative mb-1 mr-6">
+                <div
+                  class="absolute bottom-0 left-0 z-20 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow"
+                ></div>
+                <a
+                  href="#experience"
+                  class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary"
+                  >Experience</a
+                >
+              </li>
+
+              <li class="group relative mb-1 mr-6">
+                <div
+                  class="absolute bottom-0 left-0 z-20 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow"
+                ></div>
+                <a
+                  href="#skills"
+                  class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary"
+                  >Skill</a
+                >
+              </li>
+
+              <li class="group relative mb-1 mr-6">
+                <div
+                  class="absolute bottom-0 left-0 z-20 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow"
+                ></div>
+                <a
+                  href="#projects"
+                  class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary"
+                  >Project</a
+                >
+              </li>
+
+              <li>
+                <i
+                  class="bx cursor-pointer text-3xl text-primary dark:text-white"
+                  @click="themeSwitch()"
+                  :class="isDarkMode ? 'bxs-sun' : 'bxs-moon'"
+                ></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- nav bar mobile -->
+      <div
+        class="pointer-events-none fixed inset-0 z-50 flex bg-black bg-opacity-80 opacity-0 transition-opacity lg:hidden"
+        :class="isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : ''"
+      >
+        <div class="ml-auto w-2/3 bg-green p-4 md:w-1/3">
+          <i
+            class="bx bx-x absolute right-0 top-0 mr-4 mt-4 text-4xl text-white"
+            @click="isMobileMenuOpen = false"
+          ></i>
+          <ul class="mt-8 flex flex-col">
+            <li class="">
+              <a
+                href="#intro"
+                class="mb-3 block px-2 font-body text-lg font-medium text-white"
+                @click="isMobileMenuOpen = false"
+                >Intro</a
+              >
+            </li>
+
+            <li class="">
+              <a
+                href="#experience"
+                class="mb-3 block px-2 font-body text-lg font-medium text-white"
+                @click="isMobileMenuOpen = false"
+                >Experience</a
+              >
+            </li>
+
+            <li class="">
+              <a
+                href="#skills"
+                class="mb-3 block px-2 font-body text-lg font-medium text-white"
+                @click="isMobileMenuOpen = false"
+                >Skill</a
+              >
+            </li>
+
+            <li class="">
+              <a
+                href="#projects"
+                class="mb-3 block px-2 font-body text-lg font-medium text-white"
+                @click="isMobileMenuOpen = false"
+                >Project</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- content -->
+      <div>
+        <div class="container mx-auto">
+          <div id="intro" class="border-b border-grey-lighter py-20 lg:py-24">
+            <div
+              class="aspect-[1/1] w-18 overflow-hidden rounded-full bg-portrait bg-[length:85px_85px] bg-center bg-no-repeat"
+            ></div>
+            <h1
+              class="pt-3 font-body text-4xl font-semibold text-primary dark:text-white md:text-5xl lg:text-6xl"
+            >
+              Hi, I’m Chien-Lin Wang.
+              <div id="introduce"></div>
+            </h1>
+            <p
+              class="pt-3 font-body text-xl font-light text-primary dark:text-white"
+            >
+              Versatile software engineer with over 7 years of hands-on
+              experience. Skilled in full-stack development using JavaScript,
+              TypeScript, Node.js, React.js and AWS.
+              <!-- 
+                Since beginning my journey as a freelance designer 12 years ago, I've done remote work for agencies, consulted for startups, and collaborated with talented people to create digital products for both business and consumer use. I'm quietly confident, naturally curious, and perpetually working on improving my chops.
+                Specializing in refined digital web experiences with a focus on animated, responsive, and interactive content. Partnering with agencies and brands that value design and development integrity. Delivering highly executed front-end user experiences by paying close attention to the nuances of design, optimization, and performance
+                I like to craft solid and scalable frontend products with great user experiences.
+                Highly skilled at progressive enhancement, design systems & UI Engineering.
+                Proven experience building successful products for clients across several countries.
+                Design - I'm probably not the typical designer positioned behind an Illustrator artboard adjusting pixels, but I design. Immersed in stylesheets tweaking font sizes and contemplating layouts is where you'll find me (~_^). I'm committed to creating fluent user experiences while staying fashionable.
+                Engineering - In building JavaScript applications, I'm equipped with just the right tools, and can absolutely function independently of them to deliver fast, resilient solutions optimized for scale — performance and scalabilty are priorities on my radar.
+                I'm a Frontend Focused Web Developer building and managing the Front-end of Websites and Web Applications that leads to the success of the overall product. Check out some of my work in the Projects section.
+                I also like sharing content related to the stuff that I have learned over the years in Web Development so it can help other people of the Dev Community. Feel free to Connect or Follow me on my Linkedin and Instagram where I post useful content related to Web Development and Programming
+                I'm open to Job opportunities where I can contribute, learn and grow. If you have a good opportunity that matches my skills and experience then don't hesitate to contact me.
+                I'm passionate about crafting experiences that are engaging, accessible, and user-centric.
+                GM, I'm Max. I enjoy building dynamic, creative products from start to finish. Focused on developing intuitive experiences that constantly grow and improve based on user metrics. Always shipping.
+                My name is Ed Hinrichsen and I have recently completed a Bachelor of Science, majoring in Computing and Software Systems at the University of Melbourne. I have a passion for all things technology and design, from software engineering to UI/UX.
+                In addition to my love of technology and design, I am also interested in education, history, economics and politics.
+                Below are details of some of projects I have developed over my ten plus years of coding experience.
+
+               -->
+            </p>
+            <a
+              href="/"
+              class="mt-12 block bg-secondary px-10 py-4 text-center font-body text-xl font-semibold text-white transition-colors hover:bg-green sm:inline-block sm:text-left sm:text-2xl"
+            >
+              Say Hello!
+            </a>
+          </div>
+
+          <div
+            id="experience"
+            class="border-b border-grey-lighter py-16 lg:py-20"
+          >
+            <div class="flex items-center pb-6">
+              <img src="/assets/img/icon-story.png" alt="icon story" />
+              <h3
+                class="ml-3 font-body text-2xl font-semibold text-primary dark:text-white"
+              >
+                My Work Experience
+              </h3>
+            </div>
+            <div class="relative mx-auto flex w-full flex-col">
+              <span
+                class="absolute inset-y-0 left-2/5 ml-10 hidden w-px bg-black dark:bg-white md:block"
+              ></span>
+
+              <div
+                class="mt-8 flex flex-col text-center md:flex-row md:text-left"
+              >
+                <div class="md:w-2/5">
+                  <div class="flex justify-center md:justify-start">
+                    <span class="shrink-0 text-black dark:text-white">
+                      Schmidt Electronics Group
+                    </span>
+                    <div class="relative ml-3 hidden w-full md:block">
+                      <span
+                        class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 transform bg-black dark:bg-white"
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="md:w-3/5">
+                  <div class="relative flex md:pl-18">
+                    <span
+                      class="absolute left-8 top-1 hidden h-4 w-4 rounded-full border border-white bg-primary md:block"
+                    ></span>
+
+                    <div class="mt-1 flex">
+                      <i
+                        class="bx bxs-right-arrow hidden text-black dark:text-white md:block"
+                      ></i>
+                      <div class="md:-mt-1 md:pl-8">
+                        <span
+                          class="block font-body font-bold text-black dark:text-white"
+                          >Nov 2016 - Nov 2018</span
+                        >
+                        <span
+                          class="font-header block pt-2 text-xl font-bold uppercase text-black dark:text-white"
+                          >Research And Development Engineer</span
+                        >
+                        <div class="pt-2">
+                          <span
+                            class="block font-body text-black dark:text-white"
+                            >Maintained the existing <strong>Python</strong>
+                            <strong>Flask</strong> web app, ensuring its
+                            seamless operation and high availability.</span
+                          >
+                        </div>
+                        <div class="pt-2">
+                          <span
+                            class="block font-body text-black dark:text-white"
+                            >Designed and developed a network management desktop
+                            app with <strong>React.js</strong> and
+                            <strong>Electron</strong>.</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="mt-8 flex flex-col text-center md:flex-row md:text-left"
+              >
+                <div class="md:w-2/5">
+                  <div class="flex justify-center md:justify-start">
+                    <span class="shrink-0 text-black dark:text-white">
+                      D-Link
+                    </span>
+                    <div class="relative ml-3 hidden w-full md:block">
+                      <span
+                        class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 transform bg-black dark:bg-white"
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="md:w-3/5">
+                  <div class="relative flex md:pl-18">
+                    <span
+                      class="absolute left-8 top-1 hidden h-4 w-4 rounded-full border border-white bg-primary md:block"
+                    ></span>
+
+                    <div class="mt-1 flex">
+                      <i
+                        class="bx bxs-right-arrow hidden text-black dark:text-white md:block"
+                      ></i>
+                      <div class="md:-mt-1 md:pl-8">
+                        <span
+                          class="block font-body font-bold text-black dark:text-white"
+                          >Dec 2018 - Feb 2023</span
+                        >
+                        <span
+                          class="font-header block pt-2 text-xl font-bold uppercase text-black dark:text-white"
+                          >Senior Node.js Engineer</span
+                        >
+                        <div class="pt-2">
+                          <span
+                            class="block font-body text-black dark:text-white"
+                            >Developed and optimised server-side networking
+                            applications using <strong>Node.js</strong> and
+                            <strong>Express</strong>.</span
+                          >
+                        </div>
+                        <div class="pt-2">
+                          <span
+                            class="block font-body text-black dark:text-white"
+                            >Implemented <strong>RESTful APIs</strong> to
+                            facilitate seamless communication between front-end
+                            and back-end systems.</span
+                          >
+                        </div>
+                        <div class="pt-2">
+                          <span
+                            class="block font-body text-black dark:text-white"
+                            >Utilised <strong>AWS DynamoDB</strong>, a NoSQL
+                            database, to store and manage large volumes of
+                            unstructured data.</span
+                          >
+                        </div>
+                        <div class="pt-2">
+                          <span
+                            class="block font-body text-black dark:text-white"
+                            >Utilised RDBMS, specifically
+                            <strong>PostgreSQL</strong>, improved
+                            querying/writing speed.</span
+                          >
+                        </div>
+                        <div class="pt-2">
+                          <span
+                            class="block font-body text-black dark:text-white"
+                            >Implemented <strong>Redis</strong>-based Queue
+                            system with bull.js as a Pub/Sub system.</span
+                          >
+                        </div>
+                        <div class="pt-2">
+                          <span
+                            class="block font-body text-black dark:text-white"
+                            >DevOps practised <strong>CICD</strong>, enabling
+                            faster and more frequent releases and reducing
+                            development time for new features.</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="skills" class="border-b border-grey-lighter py-16 lg:py-20">
+            <div class="flex items-center pb-6">
+              <img src="/assets/img/icon-project.png" alt="icon story" />
+              <h3
+                class="ml-3 font-body text-2xl font-semibold text-primary dark:text-white"
+              >
+                My Skills
+              </h3>
+            </div>
+
+            <div
+              class="mx-auto grid max-w-4xl grid-cols-2 items-center gap-4 md:grid-cols-4"
+            >
+              <div
+                class="flex h-12 items-center justify-center bg-white shadow-lg dark:bg-primary"
+              >
+                <img
+                  class="mx-auto h-full w-full object-contain"
+                  src="https://github.com/get-icon/geticon/raw/master/icons/typescript-icon.svg"
+                  alt="Typescript"
+                  title="Typescript"
+                  style="max-width: 100%"
+                />
+              </div>
+              <div
+                class="flex h-12 items-center justify-center bg-white shadow-lg dark:bg-primary"
+              >
+                <img
+                  class="mx-auto h-full w-full object-contain"
+                  src="https://github.com/get-icon/geticon/raw/master/icons/javascript.svg"
+                  alt="JavaScript"
+                  title="JavaScript"
+                  style="max-width: 100%"
+                />
+              </div>
+              <div
+                class="flex h-12 items-center justify-center bg-white shadow-lg dark:bg-primary"
+              >
+                <img
+                  class="mx-auto h-full w-full object-contain"
+                  src="https://github.com/get-icon/geticon/raw/master/icons/react.svg"
+                  alt="React"
+                  title="React"
+                  style="max-width: 100%"
+                />
+              </div>
+              <div
+                class="flex h-12 items-center justify-center bg-white shadow-lg dark:bg-primary"
+              >
+                <img
+                  class="mx-auto h-full w-full object-contain"
+                  src="https://github.com/get-icon/geticon/raw/master/icons/tailwindcss-icon.svg"
+                  alt="Tailwind"
+                  title="Tailwind"
+                  style="max-width: 100%"
+                />
+              </div>
+              <div
+                class="flex h-12 items-center justify-center bg-white shadow-lg dark:bg-primary"
+              >
+                <img
+                  class="mx-auto h-full w-full object-contain"
+                  src="https://github.com/get-icon/geticon/raw/master/icons/html-5.svg"
+                  alt="HTML5"
+                  title="HTML5"
+                  style="max-width: 100%"
+                />
+              </div>
+              <div
+                class="flex h-12 items-center justify-center bg-white shadow-lg dark:bg-primary"
+              >
+                <img
+                  class="mx-auto h-full w-full object-contain"
+                  src="https://github.com/get-icon/geticon/raw/master/icons/css-3.svg"
+                  alt="CSS3"
+                  title="CSS3"
+                  style="max-width: 100%"
+                />
+              </div>
+              <div
+                class="flex h-12 items-center justify-center bg-white shadow-lg dark:bg-primary"
+              >
+                <img
+                  class="mx-auto h-full w-full object-contain"
+                  src="https://github.com/get-icon/geticon/raw/master/icons/nodejs-icon.svg"
+                  alt="Node"
+                  title="Node"
+                  style="max-width: 100%"
+                />
+              </div>
+              <div
+                class="flex h-12 items-center justify-center bg-white shadow-lg dark:bg-primary"
+              >
+                <img
+                  class="mx-auto h-full w-full object-contain"
+                  src="https://github.com/get-icon/geticon/raw/master/icons/express.svg"
+                  alt="Express"
+                  title="Express"
+                  style="max-width: 100%"
+                />
+              </div>
+              <div
+                class="flex h-12 items-center justify-center bg-white shadow-lg dark:bg-primary"
+              >
+                <img
+                  class="mx-auto h-full w-full object-contain"
+                  src="https://github.com/get-icon/geticon/raw/master/icons/nextjs-icon.svg"
+                  alt="Next"
+                  title="Next"
+                  style="max-width: 100%"
+                />
+              </div>
+              <div
+                class="flex h-12 items-center justify-center bg-white shadow-lg dark:bg-primary"
+              >
+                <img
+                  class="mx-auto h-full w-full object-contain"
+                  src="https://github.com/get-icon/geticon/raw/master/icons/electron.svg"
+                  alt="Electron"
+                  title="Electron"
+                  style="max-width: 100%"
+                />
+              </div>
+              <div
+                class="flex h-12 items-center justify-center bg-white shadow-lg dark:bg-primary"
+              >
+                <img
+                  class="mx-auto h-full w-full object-contain"
+                  src="https://github.com/get-icon/geticon/raw/master/icons/python.svg"
+                  alt="Python"
+                  title="Python"
+                  style="max-width: 100%"
+                />
+              </div>
+              <div
+                class="flex h-12 items-center justify-center bg-white shadow-lg dark:bg-primary"
+              >
+                <img
+                  class="mx-auto h-full w-full object-contain"
+                  src="https://github.com/get-icon/geticon/raw/master/icons/mongodb-icon.svg"
+                  alt="MongoDB"
+                  title="MongoDB"
+                  style="max-width: 100%"
+                />
+              </div>
+              <div
+                class="flex h-12 items-center justify-center bg-white shadow-lg dark:bg-primary"
+              >
+                <img
+                  class="mx-auto h-full w-full object-contain"
+                  src="https://github.com/get-icon/geticon/raw/master/icons/mysql.svg"
+                  alt="MySQL"
+                  title="MySQL"
+                  style="max-width: 100%"
+                />
+              </div>
+              <div
+                class="flex h-12 items-center justify-center bg-white shadow-lg dark:bg-primary"
+              >
+                <img
+                  class="mx-auto h-full w-full object-contain"
+                  src="https://github.com/get-icon/geticon/raw/master/icons/postgresql.svg"
+                  alt="PostgreSQL"
+                  title="PostgreSQL"
+                  style="max-width: 100%"
+                />
+              </div>
+              <div
+                class="flex h-12 items-center justify-center bg-white shadow-lg dark:bg-primary"
+              >
+                <img
+                  class="mx-auto h-full w-full object-contain"
+                  src="https://github.com/get-icon/geticon/raw/master/icons/git-icon.svg"
+                  alt="Git"
+                  title="Git"
+                  style="max-width: 100%"
+                />
+              </div>
+              <div
+                class="flex h-12 items-center justify-center bg-white shadow-lg dark:bg-primary"
+              >
+                <img
+                  class="mx-auto h-full w-full object-contain"
+                  src="https://github.com/get-icon/geticon/raw/master/icons/npm.svg"
+                  alt="npm"
+                  title="npm"
+                  style="max-width: 100%"
+                />
+              </div>
+              <div
+                class="flex h-12 items-center justify-center bg-white shadow-lg dark:bg-primary"
+              >
+                <img
+                  class="mx-auto h-full w-full object-contain"
+                  src="https://github.com/get-icon/geticon/raw/master/icons/yarn.svg"
+                  alt="Yarn"
+                  title="Yarn"
+                  style="max-width: 100%"
+                />
+              </div>
+              <div
+                class="flex h-12 items-center justify-center bg-white shadow-lg dark:bg-primary"
+              >
+                <img
+                  class="mx-auto h-full w-full object-contain"
+                  src="https://github.com/get-icon/geticon/raw/master/icons/webpack.svg"
+                  alt="webpack"
+                  title="webpack"
+                  style="max-width: 100%"
+                />
+              </div>
+              <div
+                class="flex h-12 items-center justify-center bg-white shadow-lg dark:bg-primary"
+              >
+                <img
+                  class="mx-auto h-full w-full object-contain"
+                  src="https://github.com/get-icon/geticon/raw/master/icons/jest.svg"
+                  alt="Jest"
+                  title="Jest"
+                  style="max-width: 100%"
+                />
+              </div>
+              <div
+                class="flex h-12 items-center justify-center bg-white shadow-lg dark:bg-primary"
+              >
+                <img
+                  class="mx-auto h-full w-full object-contain"
+                  src="https://github.com/get-icon/geticon/raw/master/icons/mocha.svg"
+                  alt="Mocha"
+                  title="Mocha"
+                  style="max-width: 100%"
+                />
+              </div>
+              <div
+                class="flex h-12 items-center justify-center bg-white shadow-lg dark:bg-primary"
+              >
+                <img
+                  class="mx-auto h-full w-full object-contain"
+                  src="https://github.com/get-icon/geticon/raw/master/icons/aws.svg"
+                  alt="AWS"
+                  title="AWS"
+                  style="max-width: 100%"
+                />
+              </div>
+              <div
+                class="flex h-12 items-center justify-center bg-white shadow-lg dark:bg-primary"
+              >
+                <img
+                  class="mx-auto h-full w-full object-contain"
+                  src="https://github.com/get-icon/geticon/raw/master/icons/docker-icon.svg"
+                  alt="docker"
+                  title="docker"
+                  style="max-width: 100%"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div id="projects" class="py-16 lg:py-20">
+            <div class="flex items-center pb-6">
+              <img src="/assets/img/icon-post.png" alt="icon story" />
+              <h3
+                class="ml-3 font-body text-2xl font-semibold text-primary dark:text-white"
+              >
+                My Projects
+              </h3>
+            </div>
+            <div>
+              <a
+                href="https://spotify-clone-neon-chi.vercel.app/"
+                class="mb-6 flex items-center justify-between border border-grey-lighter px-4 py-4 sm:px-6"
+              >
+                <span class="w-9/10 pr-8">
+                  <img
+                    class="object-contain"
+                    src="/assets/img/project-spotify-clone.jpg"
+                    style="max-width: 100%"
+                  />
+                  <h4
+                    class="font-body text-lg font-semibold text-primary dark:text-white"
+                  >
+                    Spotify-clone
+                  </h4>
+                  <p class="font-body font-light text-primary dark:text-white">
+                    Built with Next 13.4, React, Tailwind, Supabase with
+                    PostgreSQL to implement authentication, and Stripe the
+                    payment processing platform to enable premium subscriptions.
+                  </p>
+                </span>
+                <span class="w-1/10">
+                  <img
+                    src="/assets/img/chevron-right.png"
+                    class="mx-auto min-w-3"
+                    alt="chevron right"
+                    style="min-width: 12px"
+                  />
+                </span>
+              </a>
+
+              <a
+                href=""
+                class="pointer-events-none mb-6 flex items-center justify-between border border-grey-lighter px-4 py-4 sm:px-6"
+              >
+                <span class="w-9/10 pr-8">
+                  <h4
+                    class="font-body text-lg font-semibold text-primary dark:text-white"
+                  >
+                    Comming soon...
+                  </h4>
+                </span>
+                <span class="w-1/10"> </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <div class="container mx-auto">
+        <div
+          class="flex flex-col items-center justify-between border-t border-grey-lighter py-10 sm:flex-row sm:py-12"
+        >
+          <div class="mr-auto flex flex-col items-center sm:flex-row">
+            <a href="/" class="mr-auto sm:mr-6">
+              <img
+                class="h-6 object-contain"
+                src="/assets/img/logo-brand-no-background.png"
+                alt="logo"
+              />
+            </a>
+            <p
+              class="pt-5 font-body font-light text-primary dark:text-white sm:pt-0"
+            >
+              ©2024 Chien-Lin Wang.
+            </p>
+          </div>
+          <div class="mr-auto flex items-center pt-5 sm:mr-0 sm:pt-0">
+            <a href="mailto:chienlinw1215@gmail.com " target="_blank">
+              <i
+                class="bx bxs-envelope pl-5 text-4xl text-primary transition-colors hover:text-secondary dark:text-white dark:hover:text-secondary"
+              ></i>
+            </a>
+
+            <a href="https://github.com/kkbox360/ " target="_blank">
+              <i
+                class="bx bxl-github pl-5 text-4xl text-primary transition-colors hover:text-secondary dark:text-white dark:hover:text-secondary"
+              ></i>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/chienlinwang/ "
+              target="_blank"
+            >
+              <i
+                class="bx bxl-linkedin pl-5 text-4xl text-primary transition-colors hover:text-secondary dark:text-white dark:hover:text-secondary"
+              ></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/assets/js/main.js"></script>
+    <script>
+      startTypewriter('introduce');
+    </script>
+  </body>
+</html>
