@@ -153,7 +153,7 @@ module.exports = {
         },
       }),
       backgroundImage: {
-        portrait: "url('./author.jpg')",
+        portrait: "url('../img/author.jpg')",
       },
     },
   },
